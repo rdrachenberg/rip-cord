@@ -69,7 +69,7 @@ export default function FunctionUI({ fn, contract }) {
                         <div className='ml-3 max-w-sm truncate'>{response}</div>
                     </div>
                 }
-                <div type='submit' className='flex justify-center align-middle items-center mt-3 mb-1 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] border-blue-300 bg-blue-500 hover:bg-blue-700 w-[25%] hover:scale-105 border-2 hover:border-gray-200 p-1 rounded text-white' disabled={isDisabled} onClick={executeFunctionCall}>Submit</div>
+                <div type='submit' className='flex justify-center align-middle items-center mt-3 mb-1 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] border-blue-300 bg-blue-500 hover:bg-blue-700 sm:w-[25%] hover:scale-105 border-2 hover:border-gray-200 p-1 rounded text-white' disabled={isDisabled} onClick={executeFunctionCall}>Submit</div>
             </div>
             {error && <div className='bg-gradient-to-r from-red-300 to-red-700 text-white drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] w-full p-4'>Error: {error}</div>}
             {txConfirmation && <div>{txConfirmation}</div>}

@@ -11,7 +11,7 @@ export default function ContractUI({ abi, contract }) {
             <h3 className='mt-3 text-black'>Step 2: Interact with the smart contract</h3>
             <h4 className='mt-3 font-bold'></h4>
             {abi !== 'undefined' ?
-                <div>
+                <div className='container'>
                     {abi.map(fn => <FunctionUI key={fn.name} fn={fn} contract={contract}/>)}
                 </div>
             : <div></div>}

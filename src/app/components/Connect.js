@@ -42,10 +42,6 @@ export default function Connect({ setSigner }) {
                         <TriangleAlert className='absolute basis-1/12 justify-center align-middle items-center w-5 rounded-full'/>
                         <div className='ml-3 basis-9/12'>{error}. Click here to install</div>
                     </div>
-                    
-                    
-                        
-                    
                     </div>
                 </Link>
             }

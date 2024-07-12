@@ -36,7 +36,7 @@ export default function Upload({ signer, setAbi, setContract, abi, contract }) {
     }
 
     return (
-        <div className='mt-8'>
+        <div className='mt-8 container'>
             <h2 className='text-black'>Step 1: Upload the smart contract ABI</h2>
             <h3 className='text-black'></h3>
             <form className='form'>
@@ -44,7 +44,7 @@ export default function Upload({ signer, setAbi, setContract, abi, contract }) {
                     <label htmlFor='abi' className='form-label text-black'></label>
                     <textarea 
                         name='abi'
-                        className='mb-3 mt-1 block w-full px-2 py-1.5 border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400 text-black
+                        className='mb-3 mt-7 sm:mt-1 block w-full px-2 py-1.5 border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400 text-black
                             focus:outline-none
                             focus:border-sky-500
                             focus:ring-1
@@ -58,8 +58,8 @@ export default function Upload({ signer, setAbi, setContract, abi, contract }) {
                         onChange={updateContractABI}
                     />
                 </div>
-                <div className='mb-3 mt-4'>
-                    <label htmlFor='address' className='form-label'>Contract address</label>
+                <div className='mb-5 mt-5 p-1'>
+                    <label htmlFor='address' className='form-label bg-black w-full p-2 text-white rounded'>Contract address</label>
                     <input 
                         name='address'
                         type='text'
