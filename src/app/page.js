@@ -26,7 +26,10 @@ export default function Home() {
             <Upload signer={signer} setAbi={setAbi} setContract={setContract} abi={abi} contract={contract}/>
           </div>
         ) : ( 
-          <Connect setSigner={setSigner}/>
+          <div className='flex flex-col justify-center align-middle items-center'>
+            <Image src={'/rip_cord_logo.png'} width={200} height={100} className='mb-5 rounded'/>
+            <Connect setSigner={setSigner}/>
+          </div>
         )
         }
         </div>
