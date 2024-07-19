@@ -87,8 +87,8 @@ export default function Upload({ signer, setAbi, setContract, abi, contract }) {
                         <div><ContractUI abi={abi} contract={contract}/></div>
                     </div>
                 ) : (
-                    <div className='bg-blue-500 w-full rounded-full text-center text-white p-3 mt-36 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]'>
-                        <div className='' onClick={buildUI} disabled={ !abiString || !address }>Submit</div>
+                    <div className=''>
+                        <button className='bg-blue-500 w-full rounded-full text-center text-white p-3 mt-36 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] hover:scale-105' onClick={buildUI} disabled={ !abiString || !address }>Submit</button>
                     </div>
                 )}
             </form>
