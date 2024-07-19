@@ -1,6 +1,6 @@
 "use client"
 import { Contract } from "ethers";
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { CheckCircle } from "lucide-react";
 import ContractUI from "./ContractUI";
 export default function Upload({ signer, setAbi, setContract, abi, contract }) {
@@ -8,7 +8,8 @@ export default function Upload({ signer, setAbi, setContract, abi, contract }) {
     const [isContractUploaded, setIsContractUploaded] = useState(false);
     const [abiString, setAbiString] = useState('');
     const [address, setAddress] = useState('');
-    const [error, setError] = useState(undefined)
+    const [error, setError] = useState(undefined);
+    const [disable, setDisable] = useState(true);
 
     const updateContractABI = data => {
         setError(undefined);
@@ -34,6 +35,12 @@ export default function Upload({ signer, setAbi, setContract, abi, contract }) {
 
         console.log('buildUI submit triggered!')
     }
+
+    useEffect(() => {
+        // conditional to handle state of disable var. Controls button disabled/enabled for form submission
+        !abiString || !address ? setDisable(true): setDisable(false);
+    }, [abiString, address])
+    
 
     return (
         <div className='mt-8 container'>
@@ -88,7 +95,7 @@ export default function Upload({ signer, setAbi, setContract, abi, contract }) {
                     </div>
                 ) : (
                     <div className=''>
-                        <button className='bg-blue-500 w-full rounded-full text-center text-white p-3 mt-36 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] hover:scale-105' onClick={buildUI} disabled={ !abiString || !address }>Submit</button>
+                        <button className={`${disable ? 'bg-gray-500 border border-red-500 ' : 'bg-blue-500 hover:bg-blue-700'}  w-full rounded-full text-center text-white p-3 mt-36 drop-shadow-[0_2.5px_1.2px_rgba(0,0,0,0.8)]`} onClick={buildUI} disabled={ disable }>Submit</button>
                     </div>
                 )}
             </form>
